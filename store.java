@@ -50,7 +50,7 @@ class Vegetable{
     public float getVegetableDiscount(){
         return discount;
     }
-    public int getVegetableCount(){
+    public Integer getVegetableCount(){
         return veg_count;
     }
     public float getVegetablePrice(){
@@ -75,8 +75,14 @@ class Bill{
         System.out.println( "| NAME | PRICE/QUNT | QUANTITY | FINAL PRICE |");
         for(int i = 0; i < veg_li.size(); i++){
             discount_price = veg_li.get(i).getVegetablePrice()*veg_li.get(i).getVegetableDiscount()/100;
-            discount_price = veg_li.get(i).getVegetablePrice() - discount_price;  
-            final_price_veg = discount_price*veg_li.get(i).getVegetableCount();
+            discount_price = veg_li.get(i).getVegetablePrice() - discount_price;
+            
+            if(veg_li.get(i).getVegetableCount() == null){
+                final_price_veg = discount_price*veg_li.get(i).getVegetableWeight().floatValue();
+            }else{
+                final_price_veg = discount_price*veg_li.get(i).getVegetableCount().floatValue();
+            } 
+            
 
             result = Objects.requireNonNull("| " + veg_li.get(i).getVegitableName() + " | " + veg_li.get(i).getVegetablePrice() + " | " + veg_li.get(i).getVegetableWeight().toString() + veg_li.get(i).getVegetableCount() + " | " + final_price_veg + " |");
 

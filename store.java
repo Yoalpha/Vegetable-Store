@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -57,11 +58,20 @@ class Vegetable{
         return price;
     }
 
+    public void changePrice(float new_price){
+        price = new_price;
+    }
+    public void changeDiscount(float new_discount){
+        discount = new_discount;
+    }
 
+}
 
 
 class Bill{
+
     ArrayList <Vegetable> veg_li = new ArrayList<>();
+
     public Bill(ArrayList<Vegetable> veg_list){
         veg_li = veg_list;
     }
@@ -91,6 +101,33 @@ class Bill{
     }
 }
 
+class StockListing{
+    protected String veg_name;
+    protected float veg_amount;
+
+    public StockListing(String vegetable_name, float amount){
+        veg_name = vegetable_name;
+        veg_amount = amount;
+    }
+
+    public String getVegetableName(){
+        return veg_name;
+    }
+    public float getVegetableamount(){
+        return veg_amount;
+    }
+}
+
+class Stock{
+
+    
+    ArrayList <StockListing> stock_li = new ArrayList<>();
+    
+    public void addStock(StockListing stock_listing){
+        stock_li.add(stock_listing);
+    }
+}
+
 
 
 
@@ -114,4 +151,3 @@ public class store{
     
     
 
-}

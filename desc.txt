@@ -1,0 +1,19 @@
+Design using oo a vegetable store app.
+
+1. Store can have different kinds of vegetables like, carrots, beans, cauliflower, 
+cabbage, green capsicum, tomato, onion, etc
+2. Some vegetables are priced based on weight and some based on count.
+3. If necessary some vegetables can be sold at discounted price.
+4. Generate a customer bill, which will include customer name, customer phone number,
+order type (in-store, online), item name, unit price, item quantity, item price, 
+discount amt any for an item, total items price, cg sales tax specified percentage,
+total price.
+Look at some sample bill.
+5. The weight items, customer can order any weight.
+6. For online orders if the specified weight is not available, the item should be
+ignored.
+7. Stock of items should be maintained.
+8. Store can add new vegs anytime.
+9. Can add, update, remove discount price on an item.
+
+Design the required classes.

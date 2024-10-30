@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -136,11 +136,67 @@ class Stock{
 public class store{
     public static void main(String[] args){
 
-        String client;
-        ArrayList <Vegetable> veg_li = new ArrayList<>();
+        
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("STORE INITIALIZE");
+        System.out.println("STORE MENU");
+        System.out.println("[1] STOCK");
+        System.out.println("[2] BILL");
+
+        int input_menu = sc.nextInt();
+
+        int stock_input = 0;
+        int bill_input = 0;
+
+        if(input_menu == 1){
+            System.out.println("STOCK");
+            System.out.println("[1] ADD STOCK");
+            System.out.println("[2] REMOVE STOCK");
+            System.out.println("[3] DISPLAY STOCK");
+
+            stock_input = sc.nextInt();
+        }
+
+        if(input_menu == 2){
+
+            String vegetable_name;
+            Double amount;
+            float price;
+            float discount;
+
+            ArrayList <Vegetable> veg_li = new ArrayList<>();
+            while (bill_input != 4){
+                
+                System.out.println("BILL");
+                System.out.println("[1] ADD ITEM");
+                System.out.println("[2] REMOVE ITEM");
+                System.out.println("[3] DISPLAY BILL");
+                System.out.println("[4] PRINT BILL");
+                
+                bill_input = sc.nextInt();
+
+                if(bill_input == 1){
+                    
+                    System.out.println("ENTER VEGETABLE NAME: ");
+                    vegetable_name = sc.nextLine();
+
+                    System.out.println("ENTER VEGETABLE AMOUNT: ");
+                    amount = sc.nextDouble();
+
+                    System.out.println("ENTER VEGETABLE PRICE: ");
+                    price = sc.nextFloat();
+
+                    System.out.println("ENTER VEGETABLE DISCOUNT: ");
+                    discount = sc.nextFloat();
+
+                    Vegetable veg = new Vegetable(vegetable_name, amount, price, discount); 
+                    
+
+                }
+            }
+        }
+
+        
 
     }
 }
